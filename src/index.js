@@ -1,8 +1,14 @@
 import React from "react";
 import { render } from "react-dom";
-import App from "./App";
+import { Provider } from "react-redux";
+import App from "./components/App";
 
 import store from "./store/store";
 import { addArticle } from "./actions/actionCreators";
 
-render(<App />, document.querySelector("#app"));
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.querySelector("#app")
+);
